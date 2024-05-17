@@ -1,0 +1,25 @@
+<xf:wrap template="account_wrapper" />
+
+<xf:title>{{ phrase('api_key') }}</xf:title>
+
+<xf:form class="block" action="{{ link('account/api-key-generate') }}">
+	<div class="block-container">
+		<div class="block-body">
+			<div class="block-row">
+				{{ phrase('wuak_api_key_description') }}
+			</div>
+			<div class="block-row">
+				<div class="inputGroup">
+					<xf:textbox value="{{ $userApiKey ? $userApiKey.api_key : phrase('wuak_you_have_no_api_key_configured') }}" 
+								disabled="disabled" />
+
+					<span class="inputGroup-splitter"></span>
+					<xf:button  icon="copy" />
+
+					<span class="inputGroup-splitter"></span>
+					<xf:button type="submit" icon="save" />
+				</div>
+			</div>
+		</div>
+	</div>
+</xf:form>

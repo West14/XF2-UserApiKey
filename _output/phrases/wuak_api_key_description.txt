@@ -1,0 +1,1 @@
+The API key is updated every six months. Please make sure your key is up to date. Once you create it, you will only be able to view it once.

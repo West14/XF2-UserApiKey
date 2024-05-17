@@ -1,0 +1,14 @@
+{
+    "permission.general_wuakUseApiKeys.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "64668f2bc008147ea0d4fc45e35e4f7c"
+    },
+    "wuak_api_key_description.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "5362fb046f0b485fa643bc8f06d333ac"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\Pub\\Controller\\Account",
+    "to_class": "West\\UserApiKey\\XF\\Pub\\Controller\\Account",
+    "execute_order": 100600,
+    "active": true
+}
