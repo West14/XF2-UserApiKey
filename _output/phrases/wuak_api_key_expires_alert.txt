@@ -1,0 +1,1 @@
+Your API key expires {datetime}. Please <a class="fauxBlockLink-blockLink"  href="{link}">renew it</a> as soon as possible if you still want to use it.

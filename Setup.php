@@ -20,11 +20,12 @@ class Setup extends AbstractSetup
             $table->addColumn('user_id', 'int');
             $table->addColumn('api_key_id', 'int');
             $table->addColumn('expires_at', 'int');
+            $table->addColumn('seen', 'bool');
             $table->addPrimaryKey(['user_id', 'api_key_id']);
         });
     }
 
-    public function uninstallStep2()
+    public function uninstallStep1()
     {
         $this->dropTable('xf_wuak_user_api_key');
     }

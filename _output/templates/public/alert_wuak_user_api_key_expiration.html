@@ -1,0 +1,12 @@
+<xf:if is="$content.isExpired()">
+    {{ phrase('wuak_api_key_expired_alert', {
+        'datetime': date_dynamic($content.expires_at),
+        'link': link('account/api-key')
+    }) }}
+<xf:else />
+    {{ phrase('wuak_api_key_expires_alert', {
+        'datetime': date_dynamic($content.expires_at),
+        'link': link('account/api-key')
+    }) }}
+</xf:if>
+

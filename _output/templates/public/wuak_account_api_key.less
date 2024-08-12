@@ -1,0 +1,37 @@
+.input {
+    &-apiKey {
+        &--notSeen {
+            cursor: pointer;
+        }
+
+        &[readonly] {
+            color: @xf-inputTextColor;
+            background: @xf-inputBgColor;
+        }
+    }
+}
+
+.countdown {
+    display: flex;
+    align-items: center;
+
+    &-container {
+        width: fit-content;
+        background: @xf-contentHighlightBg;
+        padding: @xf-paddingMedium;
+        border-radius: @xf-borderRadiusMedium;
+        margin-left: @xf-paddingSmall;
+    }
+
+    &-separator {
+        color: @xf-textColorFeature;
+    }
+}
+
+.overlay {
+    &-apiKeyHelp {
+        .overlay-titleCloser {
+            display: none;
+        }
+    }
+}

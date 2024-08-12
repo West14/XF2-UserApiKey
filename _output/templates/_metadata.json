@@ -1,7 +1,27 @@
 {
+    "admin/option_template_wuakAllowedScopes.html": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "9d4c6f5631c0a0d90d88d8cf6d8a4222"
+    },
+    "public/alert_wuak_user_api_key_expiration.html": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "f33889e4814555404af435290b1ab909"
+    },
     "public/wuak_account_api_key.html": {
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
-        "hash": "061e5b4648d269a319e7d49206eff93e"
+        "hash": "49a8a3f320727ee28989af69fb34a393"
+    },
+    "public/wuak_account_api_key.less": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "9cef01fb3c60a0a37e9c4c5d868c9cab"
+    },
+    "public/wuak_account_api_key_help.html": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "3021754155317a2eddfa119a7a991d0c"
     }
 }

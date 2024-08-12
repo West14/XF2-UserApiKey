@@ -1,0 +1,9 @@
+{
+    "template": "account_wrapper",
+    "description": "Add nav item",
+    "execution_order": 100600,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "\t\t\t\t<a class=\"blockLink {{ $pageSelected == 'preferences' ? 'is-selected' : '' }}\" href=\"{{ link('account/preferences') }}\">\n\t\t\t\t\t{{ phrase('preferences') }}\n\t\t\t\t</a>",
+    "replace": "$0\n\n<xf:if is=\"$xf.visitor.canWuakUseApiKeys()\">\n\t<a class=\"blockLink {{ $pageSelected == 'wuak-api-key' ? 'is-selected' : '' }}\" href=\"{{ link('account/api-key') }}\">\n\t\t{{ phrase('wuak_api_key') }}\n\t</a>\n</xf:if>"
+}

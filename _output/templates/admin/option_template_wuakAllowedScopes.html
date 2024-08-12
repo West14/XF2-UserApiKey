@@ -1,0 +1,21 @@
+<xf:radiorow label="{$option.title}"
+             hint="{$hintHtml}"
+             explain="{$explainHtml}"
+             html="{$listedHtml}"
+             rowclass="{$rowClass}"
+             name="{$inputName}[allow_all_scopes]"
+             value="{$option.option_value.allow_all_scopes}">
+    <xf:option value="1" label="{{ phrase('all_scopes') }}"/>
+    <xf:option value="0" label="{{ phrase('selected_scopes_only') }}" data-hide="true">
+        <xf:checkbox>
+            <xf:foreach loop="$scopes" value="$scope">
+                <xf:option name="{$inputName}[scopes][]"
+                           value="{$scope.api_scope_id}"
+                           checked="{$option.option_value.scopes.{$scope.api_scope_id}}"
+                           label="{$scope.api_scope_id}"
+                           hint="{$scope.description}" />
+            </xf:foreach>
+        </xf:checkbox>
+    </xf:option>
+    <xf:explain>{{ phrase('api_scopes_explain') }}</xf:explain>
+</xf:radiorow>

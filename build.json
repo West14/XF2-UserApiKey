@@ -1,0 +1,6 @@
+{
+  "additional_files": "js/west/uak",
+  "minify": [
+    "js/west/uak/countdown.js"
+  ]
+}

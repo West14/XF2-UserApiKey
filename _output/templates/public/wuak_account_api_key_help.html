@@ -1,0 +1,26 @@
+<xf:title>{{ phrase('wuak_important') }}</xf:title>
+
+<xf:form class="block" data-xf-init="{{ !$noTimer ? 'reg-form': '' }}" data-timer="3">
+    <div class="block-container">
+        <div class="block-body">
+            <div class="blockMessage">
+                {{ phrase('wuak_api_key_help') }}
+            </div>
+        </div>
+
+        <xf:submitrow rowtype="simple">
+            <xf:html>
+                <xf:button id="js-signUpButton"
+                           class="js-overlayClose button--primary">
+                    <xf:if is="$noTimer">
+                        {{ phrase('okay') }}
+                    <xf:else />
+                        <span id="js-regTimer" data-timer-complete="{{ phrase('okay') }}">
+                            {{ phrase('(please_wait_x_seconds)', {'seconds': "<span>3</span>"}) }}
+                         </span>
+                    </xf:if>
+                </xf:button>
+            </xf:html>
+        </xf:submitrow>
+    </div>
+</xf:form>

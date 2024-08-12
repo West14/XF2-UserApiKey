@@ -1,0 +1,9 @@
+{
+    "template": "account_visitor_menu",
+    "description": "Add menu item",
+    "execution_order": 100600,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<li><a href=\"{{ link('account/preferences') }}\" class=\"menu-linkRow\">{{ phrase('preferences') }}</a></li>\n",
+    "replace": "$0\n\n<xf:if is=\"$xf.visitor.canWuakUseApiKeys()\">\n\t<li><a href=\"{{ link('account/api-key') }}\" class=\"menu-linkRow\">{{ phrase('wuak_api_key') }}</a></li>\n</xf:if>"
+}

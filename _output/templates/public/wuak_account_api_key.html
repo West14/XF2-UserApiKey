@@ -1,25 +1,85 @@
 <xf:wrap template="account_wrapper" />
 
-<xf:title>{{ phrase('api_key') }}</xf:title>
+<xf:title>{{ phrase('wuak_api_key') }}</xf:title>
+
+<xf:css src="wuak_account_api_key.less" />
+
+<xf:js src="xf/login_signup.js" min="1" />
+<xf:js src="west/uak/countdown.js" min="1" addon="West/UserApiKey" />
+
+<xf:set var="$docUrl" value="{$xf.options.wuakDocUrl}" />
+
+<xf:pageaction>
+	<xf:if is="$docUrl">
+		<xf:button href="{$docUrl}" fa="fa-book" target="_blank">
+			{{ phrase('wuak_documentation') }}
+		</xf:button>
+	</xf:if>
+
+	<xf:button class="button--iconOnly" fa="fa-question"
+			   href="{{ link('account/api-key-help', null, { 'noTimer': !$showToken }) }}"
+			   overlay="true"
+			   data-overlay-config="{{ {'backdropClose': false, 'escapeClose': false, 'className': 'overlay-apiKeyHelp'}|json }}"
+			   data-load-auto-click="{$showToken}"
+	/>
+</xf:pageaction>
 
 <xf:form class="block" action="{{ link('account/api-key-generate') }}">
 	<div class="block-container">
 		<div class="block-body">
 			<div class="block-row">
 				{{ phrase('wuak_api_key_description') }}
+
+				<xf:if is="$userApiKey">
+					<xf:if is="$userApiKey.isExpired()">
+						<div class="block-rowMessage block-rowMessage--warning">
+							{{ phrase('wuak_your_api_key_has_expired') }}
+						</div>
+						<xf:else />
+						<div class="countdown" data-xf-init="wuak-countdown" data-timestamp="{$userApiKey.expires_at}">
+							<span class="countdown-text">{{ phrase('wuak_api_key_will_expire_in:') }}</span>
+							<div class="countdown-container">
+								<span class="countdown-days">10 days</span>
+								<span class="countdown-separator">:</span>
+								<span class="countdown-hours">20 hours</span>
+								<span class="countdown-separator">:</span>
+								<span class="countdown-minutes">30 minutes</span>
+								<span class="countdown-separator">:</span>
+								<span class="countdown-seconds">40 seconds</span>
+							</div>
+						</div>
+					</xf:if>
+				</xf:if>
 			</div>
 			<div class="block-row">
 				<div class="inputGroup">
-					<xf:textbox value="{{ $userApiKey ? $userApiKey.api_key : phrase('wuak_you_have_no_api_key_configured') }}" 
-								disabled="disabled" />
+					<xf:if is="$showToken">
+						<xf:textbox class="input-apiKey input-apiKey--notSeen"
+									value="{$userApiKey.token}"
+									readonly="readonly"
+									data-xf-init="copy-to-clipboard"
+									data-copy-text="{$userApiKey.token|for_attr}"
+						/>
+					<xf:else />
+						<xf:textbox class="input-apiKey"
+									value="{{ $userApiKey ? $userApiKey.token : phrase('wuak_api_key_is_not_created') }}"
+									readonly="readonly"
+						/>
+					</xf:if>
 
 					<span class="inputGroup-splitter"></span>
-					<xf:button  icon="copy" />
 
-					<span class="inputGroup-splitter"></span>
-					<xf:button type="submit" icon="save" />
+					<xf:button class="button--cta" type="submit">
+						<xf:if is="$userApiKey">
+							{{ phrase('regenerate_key') }}
+						<xf:else />
+							{{ phrase('wuak_create_api_key') }}
+						</xf:if>
+					</xf:button>
 				</div>
 			</div>
 		</div>
 	</div>
 </xf:form>
+
+<script class="js-extraPhrases" type="application/json">{$extraPhrases|raw}</script>

@@ -1,0 +1,1 @@
+If specified, a button leading to the documentation page will be displayed on the API key management page.

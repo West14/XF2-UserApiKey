@@ -1,0 +1,1 @@
+API key is displayed only once. If you lose it, you will have to generate a new one.

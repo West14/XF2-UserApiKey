@@ -1,0 +1,17 @@
+{
+    "cron_class": "West\\UserApiKey\\Cron\\ExpirationAlert",
+    "cron_method": "sendExpirationAlerts",
+    "run_rules": {
+        "day_type": "dom",
+        "dom": [
+            -1
+        ],
+        "hours": [
+            0
+        ],
+        "minutes": [
+            0
+        ]
+    },
+    "active": true
+}

@@ -1,14 +1,152 @@
 {
+    "alert_opt_out.wuak_user_api_key_expiration.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "e047204a4983511ceb508d5f2b6d9a49"
+    },
+    "cron_entry.wuakDeactivateKeys.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "1a47ffc3771cc726725f29e3128e3086"
+    },
+    "cron_entry.wuakExpirationAlert.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "79c0e4c2f718317d102f93e0a8f1df19"
+    },
+    "option.wuakAllowedScopes.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "953fdbaa0d5dcbd894cbc3f7a60807c2"
+    },
+    "option.wuakDocUrl.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "6758a0bf77df1c4e4729d20133a2e170"
+    },
+    "option.wuakKeyLifeTime.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "ca3b52ca89cdf525fddc8f95958506f5"
+    },
+    "option_explain.wuakAllowedScopes.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "option_explain.wuakDocUrl.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "3e05596a77cc4cf244e01e397f79b51e"
+    },
+    "option_explain.wuakKeyLifeTime.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "0c40f61caf1304466f1d33b1f56359ef"
+    },
+    "option_group.wUserApiKey.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "e59a1b2e5ae3f9f8de15f775f28189e8"
+    },
+    "option_group_description.wUserApiKey.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "d41d8cd98f00b204e9800998ecf8427e"
+    },
     "permission.general_wuakUseApiKeys.txt": {
         "global_cache": false,
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "64668f2bc008147ea0d4fc45e35e4f7c"
     },
+    "wuak_api_key.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "656a6828d7ef1bb791e42087c4b5ee6e"
+    },
     "wuak_api_key_description.txt": {
         "global_cache": false,
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
-        "hash": "5362fb046f0b485fa643bc8f06d333ac"
+        "hash": "2490ba31bc605fdb49beb56c1bbbffe9"
+    },
+    "wuak_api_key_expired_alert.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "ea3611fc1771ecca4794dde8079e45eb"
+    },
+    "wuak_api_key_expires_alert.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "f3975aa4ecf0d64cc8666d727fe654b5"
+    },
+    "wuak_api_key_help.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "b6da3cdf36f96845db5c3b77ca416341"
+    },
+    "wuak_api_key_is_not_created.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "9395d4f31dc037e5776d02373fe92188"
+    },
+    "wuak_api_key_will_expire_in.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "d36c166bf2bcb70d5b15255c3bc6c82a"
+    },
+    "wuak_create_api_key.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "0a2454cf86e3c9290ddcc717bfe8f968"
+    },
+    "wuak_documentation.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "5b6cf869265c13af8566f192b4ab3d2a"
+    },
+    "wuak_important.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "0ab984d91ab0a037bdf692bf0e73c349"
+    },
+    "wuak_x_day.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "e794f115ddbb015feb1e20af727340e3"
+    },
+    "wuak_x_days_few.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "154d469c8391fbb940d0378f3d474588"
+    },
+    "wuak_your_api_key_has_expired.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "67aa1a08c672abc880aa1d51552a61a5"
     }
 }

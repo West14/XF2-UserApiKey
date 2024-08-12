@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\Service\\ApiKey\\Manager",
+    "to_class": "West\\UserApiKey\\XF\\Service\\ApiKey\\Manager",
+    "execute_order": 100600,
+    "active": true
+}
