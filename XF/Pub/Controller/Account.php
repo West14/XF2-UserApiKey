@@ -16,14 +16,58 @@ class Account extends XFCP_Account
     {
         parent::preDispatchController($action, $params);
 
-        if (in_array(strtolower($action), ['apikey', 'apikeygenerate', 'apikeyhelp']))
+        $action = strtolower($action);
+        if (in_array($action, ['apikey', 'apikeygenerate', 'apikeyhelp', 'store']))
         {
             $this->assertPasswordVerified(1800);
 
-            if (!\XF::visitor()->canWuakUseApiKeys())
+            /** @var \West\UserApiKey\XF\Entity\User $visitor */
+            $visitor = \XF::visitor();
+            if (!$visitor->canWuakUseApiKeys())
             {
                 throw $this->exception($this->noPermission());
             }
+
+            $store = $visitor->UserStore;
+            if ($store && !$store->active)
+            {
+                throw $this->exception(
+                    $this->view('West\UserApiKey:Account\StoreDisabled', 'wuak_account_store_disabled')
+                );
+            }
+
+            if (strpos($action, 'apikey') === 0 && (!$store || !$store->isValid()))
+            {
+                throw $this->exception($this->redirect($this->buildLink('account/store')));
+            }
+        }
+    }
+
+    public function actionStore()
+    {
+        $user = \XF::visitor();
+        /** @var \West\UserApiKey\Entity\UserStore $store */
+        $store = $user->getRelationOrDefault('UserStore');
+
+        if ($this->isPost())
+        {
+            $store->store_url = $this->filter('store_url', 'str');
+            $store->save();
+
+            return $this->redirect($this->buildLink('account/api-key'));
+        }
+        else
+        {
+            $exampleData = $this->getStoreLinkExampleData();
+
+            $view = $this->view('West\UserApiKey:Account\Store', 'wuak_account_store', [
+                'user' => $user,
+                'store' => $store,
+                'snippet' => $exampleData['snippet'],
+                'checkUrl' => $exampleData['checkUrl']
+            ]);
+
+            return $this->addAccountWrapperParams($view, 'wuak-api-key');
         }
     }
 
@@ -89,6 +133,23 @@ class Account extends XFCP_Account
         return $this->view('West\UserApiKey:Account\ApiKeyHelp', 'wuak_account_api_key_help', [
             'noTimer' => $this->filter('noTimer', 'bool')
         ]);
+    }
+
+    protected function getStoreLinkExampleData()
+    {
+        $options = $this->options();
+        $checkUrl = $options->wuakCheckUrl ?: $options->boardUrl;
+        $boardTitle = $options->boardTitle;
+
+        $tokens = [
+            '{checkUrl}' => $checkUrl,
+            '{boardTitle}' => $boardTitle,
+        ];
+
+        return [
+            'snippet' => strtr($options->wuakExampleLinkSnippet, $tokens),
+            'checkUrl' => $checkUrl
+        ];
     }
 
     /**

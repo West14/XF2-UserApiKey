@@ -1,0 +1,1 @@
+Here you can set the URL which will be used by the checker service to make sure that store hasn't removed the link to your site. Leave blank, if you want to use the "<a href="/admin.php?options/boardUrl/view" target="_blank">Board URL</a>" option value.

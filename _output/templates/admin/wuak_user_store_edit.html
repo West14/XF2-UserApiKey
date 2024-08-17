@@ -1,0 +1,30 @@
+<xf:title>{{ phrase('wuak_store_configuration:') }} {$store.User.username}</xf:title>
+
+<xf:form class="block" action="{{ link('wuak-stores/save', $store) }}">
+    <div class="block-container">
+        <div class="block-body">
+            <xf:formrow label="{{ phrase('user') }}">
+            	<xf:username user="$store.User" rich="true" />
+            </xf:formrow>
+
+            <xf:formrow label="{{ phrase('wuak_store_status') }}" explain="{$store.getStatusExplainPhrase()}">
+                <span class="u-ltr">{$store.getStatusPhrase()}</span>
+            </xf:formrow>
+
+            <xf:textboxrow name="store_url"
+                           value="{$store.store_url}"
+                           label="{{ phrase('wuak_store_address') }}"
+                           placeholder="{$xf.options.boardUrl}"
+            />
+
+            <xf:checkboxrow>
+                <xf:option name="active" value="1" selected="$store.active"
+                           hint="{{ phrase('wuak_store_enabled_explain') }}">
+                    {{ phrase('enabled') }}
+                </xf:option>
+            </xf:checkboxrow>
+        </div>
+
+        <xf:submitrow icon="save" />
+    </div>
+</xf:form>

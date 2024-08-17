@@ -1,0 +1,1 @@
+Checker was unable to connect to your store. Please check your server configuration. If the problem persists, contact the forum staff.

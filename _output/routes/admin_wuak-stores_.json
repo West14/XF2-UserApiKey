@@ -1,0 +1,11 @@
+{
+    "route_type": "admin",
+    "route_prefix": "wuak-stores",
+    "sub_name": "",
+    "format": ":int<user_id>/",
+    "build_class": "",
+    "build_method": "",
+    "controller": "West\\UserApiKey:UserStore",
+    "context": "wuakUserStores",
+    "action_prefix": ""
+}

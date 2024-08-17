@@ -1,8 +1,8 @@
 {
-    "wuakDeactivateKeys.json": {
-        "hash": "10bcc0c8bf3585a05687639a14d5deaf"
-    },
     "wuakExpirationAlert.json": {
         "hash": "4b237bee345cfbe0ad661dd4a6837311"
+    },
+    "wuakStoreCheck.json": {
+        "hash": "167c9bc85d832c34d491e4f814454a20"
     }
 }

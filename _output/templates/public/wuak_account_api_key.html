@@ -16,6 +16,10 @@
 		</xf:button>
 	</xf:if>
 
+	<xf:button fa="fa-store" href="{{ link('account/store') }}" overlay="true">
+		{{ phrase('wuak_store_configuration') }}
+	</xf:button>
+
 	<xf:button class="button--iconOnly" fa="fa-question"
 			   href="{{ link('account/api-key-help', null, { 'noTimer': !$showToken }) }}"
 			   overlay="true"

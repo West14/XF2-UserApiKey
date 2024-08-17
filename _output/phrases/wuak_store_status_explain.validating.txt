@@ -1,0 +1,1 @@
+Your store is currently in validation queue. We'll send you and alert when validation will be completed.

@@ -1,0 +1,1 @@
+Disabling the store will block the user from accessing the store configuration page and disable their API key.

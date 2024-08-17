@@ -1,0 +1,42 @@
+<xf:title>{{ phrase('wuak_user_store_list') }}</xf:title>
+
+<xf:form class="block" action="{{ link('wuak-stores/toggle') }}" ajax="true">
+    <div class="block-container">
+        <div class="block-body">
+            <xf:datalist>
+                <xf:datarow rowtype="header">
+                    <xf:cell>{{ phrase('user_name') }}</xf:cell>
+                    <xf:cell>{{ phrase('status') }}</xf:cell>
+                    <xf:cell>{{ phrase('wuak_last_link_check') }}</xf:cell>
+                    <xf:cell>&nbsp;</xf:cell>
+                </xf:datarow>
+
+                <xf:foreach loop="$storeList" value="$store">
+                	<xf:datarow href="{{ link('wuak-stores/edit', $store) }}"
+                		hash="{$store.user_id}"
+                		label="{$store.User.username}"
+                		hint="{$store.store_url}">
+
+                        <xf:cell>
+                            <xf:if is="$store.status == 'error'">
+                                <span data-xf-init="tooltip" title="{$store.getErrorPhrase()}">
+                                    <xf:fa icon="fas fa-exclamation-circle" />
+                                    {$store.getStatusPhrase()}
+                                </span>
+                            <xf:else />
+                                {$store.getStatusPhrase()}
+                            </xf:if>
+                        </xf:cell>
+                        <xf:cell><xf:date time="{$store.checked_at}" /></xf:cell>
+
+                        <xf:toggle name="active[{$store.user_id}]" selected="{$store.active}"
+                        	class="dataList-cell--separated" submit="true" />
+                    </xf:datarow>
+                </xf:foreach>
+            </xf:datalist>
+        </div>
+    </div>
+
+    <xf:pagenav page="{$page}" perpage="{$perPage}" total="{$total}" link="wuak-stores"
+                wrapperclass="block-outer block-outer--after" />
+</xf:form>

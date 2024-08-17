@@ -1,0 +1,1 @@
+You store status has changed to: {status}. Click <a class="fauxBlockLink-blockLink" href="{link}">here</a> for more info.

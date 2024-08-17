@@ -4,5 +4,11 @@
     },
     "wuak_user_api_key-entity.json": {
         "hash": "50333a69c6d6920860e873be92372770"
+    },
+    "wuak_user_store-alert_handler_class.json": {
+        "hash": "d1f982cb21a54a9ad505c42712ed5521"
+    },
+    "wuak_user_store-entity.json": {
+        "hash": "cea9f9999bf507d84a5c9d0d94291f0a"
     }
 }

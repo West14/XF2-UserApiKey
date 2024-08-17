@@ -1,0 +1,17 @@
+{
+    "cron_class": "West\\UserApiKey\\Cron\\StoreCheck",
+    "cron_method": "performStoreCheck",
+    "run_rules": {
+        "day_type": "dom",
+        "dom": [
+            -1
+        ],
+        "hours": [
+            -1
+        ],
+        "minutes": [
+            0
+        ]
+    },
+    "active": true
+}

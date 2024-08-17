@@ -2,8 +2,14 @@
     "wuakAllowedScopes.json": {
         "hash": "af40b48d6d665612a6c3721c21b3e515"
     },
+    "wuakCheckUrl.json": {
+        "hash": "842c58a8bf610f97e8e2b91c61dbe63d"
+    },
     "wuakDocUrl.json": {
         "hash": "71d12c730e1e27ecd331295a3aaed3b1"
+    },
+    "wuakExampleLinkSnippet.json": {
+        "hash": "f5286d7bc5a0e2e06381f5f67fe845ce"
     },
     "wuakKeyLifeTime.json": {
         "hash": "386396d6e50939de3feefd038e223ee6"

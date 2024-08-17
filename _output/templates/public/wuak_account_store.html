@@ -1,0 +1,50 @@
+<xf:wrap template="account_wrapper" />
+
+<xf:title>{{ phrase('wuak_store_configuration') }}</xf:title>
+
+<xf:css src="wuak_account_store.less" />
+
+<xf:form class="block" action="{{ link('account/store') }}">
+    <div class="block-container">
+        <div class="block-body">
+            <xf:inforow>
+                {{ phrase('wuak_store_description') }}
+            </xf:inforow>
+
+            <xf:inforow>
+            	{{ phrase('wuak_store_code_snippet_description', { 'checkUrl': $checkUrl }) }}
+            </xf:inforow>
+
+            <xf:formrow rowtype="fullWidth noLabel" label="">
+                <div class="inputGroup">
+                    <xf:codeeditor
+                            value="{$snippet}"
+                            mode="html" readonly="true"
+                            class="codeEditor--autoSize" rows="1"
+                    />
+
+                    <span class="inputGroup-splitter"></span>
+
+                    <xf:button fa="fa-copy"
+                               class="button--iconOnly"
+                               data-xf-init="copy-to-clipboard"
+                               data-copy-text="{$snippet}" />
+                </div>
+            </xf:formrow>
+
+            <xf:if is="$store.exists()">
+                <xf:formrow label="{{ phrase('wuak_store_status') }}" explain="{$store.getStatusExplainPhrase()}"
+                            hint="{{ phrase('wuak_last_link_check:') }} {{ date_dynamic($store.checked_at) }}">
+                    <span class="u-ltr storeStatus-{$store.status}">{$store.getStatusPhrase()}</span>
+                </xf:formrow>
+            </xf:if>
+
+            <xf:textboxrow name="store_url"
+                           value="{$store.store_url}"
+                           label="{{ phrase('wuak_store_address') }}"
+                           placeholder="{$xf.options.boardUrl}"
+            />
+        </div>
+        <xf:submitrow icon="save" />
+    </div>
+</xf:form>

@@ -10,7 +10,11 @@ use XF\Mvc\Entity\Structure;
  * @property int $user_id
  * @property int $api_key_id
  * @property int $expires_at
- * @property bool seen
+ * @property bool $seen
+ *
+ * GETTERS
+ * @property mixed $token
+ * @property mixed $token_snippet
  *
  * RELATIONS
  * @property \XF\Entity\User $User
@@ -64,7 +68,8 @@ class UserApiKey extends Entity
             'ApiKey' => [
                 'entity' => 'XF:ApiKey',
                 'type' => self::TO_ONE,
-                'conditions' => 'api_key_id'
+                'conditions' => 'api_key_id',
+                'cascadeDelete' => true
             ]
         ];
 

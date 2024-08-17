@@ -1,0 +1,1 @@
+Here is a sample code to place on the homepage of your store. Note that our robot will search for the <code>&lt;a&gt;</code> element with the <code>href</code> attribute, which has the value <code>{checkUrl}</code>. Therefore, it should strictly match the provided example.

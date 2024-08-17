@@ -1,0 +1,1 @@
+You must provide us with your store address before you can use our API. The home page of your store MUST contain a visible link to our website. This requirement is automatically checked by our software. If you use CloudFlare or similar services, you must configure them properly to allow our robot to access your site.

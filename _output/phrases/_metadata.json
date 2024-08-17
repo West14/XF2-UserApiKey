@@ -1,15 +1,27 @@
 {
+    "admin_navigation.wuakUserStores.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "491b0f78c41c30166d04b55eb01bd6ac"
+    },
+    "admin_permission.wuakManage.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "3d966905e6d9fbbf1990912413596220"
+    },
     "alert_opt_out.wuak_user_api_key_expiration.txt": {
         "global_cache": false,
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "e047204a4983511ceb508d5f2b6d9a49"
     },
-    "cron_entry.wuakDeactivateKeys.txt": {
+    "alert_opt_out.wuak_user_store_status_change.txt": {
         "global_cache": false,
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
-        "hash": "1a47ffc3771cc726725f29e3128e3086"
+        "hash": "c95aa87f702fc7f536211ec6d0ff0f77"
     },
     "cron_entry.wuakExpirationAlert.txt": {
         "global_cache": false,
@@ -17,17 +29,35 @@
         "version_string": "1.0.0 Alpha",
         "hash": "79c0e4c2f718317d102f93e0a8f1df19"
     },
+    "cron_entry.wuakStoreCheck.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "bbc0ffccbab940bdc08b8684101a4055"
+    },
     "option.wuakAllowedScopes.txt": {
         "global_cache": false,
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "953fdbaa0d5dcbd894cbc3f7a60807c2"
     },
+    "option.wuakCheckUrl.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "cb524d487e5109033fbffff700c2f6ae"
+    },
     "option.wuakDocUrl.txt": {
         "global_cache": false,
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "6758a0bf77df1c4e4729d20133a2e170"
+    },
+    "option.wuakExampleLinkSnippet.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "fd9b5560018cc0a7639249eca4b57e3d"
     },
     "option.wuakKeyLifeTime.txt": {
         "global_cache": false,
@@ -41,11 +71,23 @@
         "version_string": "1.0.0 Alpha",
         "hash": "d41d8cd98f00b204e9800998ecf8427e"
     },
+    "option_explain.wuakCheckUrl.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "742effcdbe9e0efc6603b4ee6eeb3a67"
+    },
     "option_explain.wuakDocUrl.txt": {
         "global_cache": false,
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "3e05596a77cc4cf244e01e397f79b51e"
+    },
+    "option_explain.wuakExampleLinkSnippet.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "e32f5c4aa14551b671e3fe3ce2a8e219"
     },
     "option_explain.wuakKeyLifeTime.txt": {
         "global_cache": false,
@@ -113,6 +155,12 @@
         "version_string": "1.0.0 Alpha",
         "hash": "d36c166bf2bcb70d5b15255c3bc6c82a"
     },
+    "wuak_checking_stores.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "dce822e97c7209e828ae20834c50e2d7"
+    },
     "wuak_create_api_key.txt": {
         "global_cache": false,
         "version_id": 1000010,
@@ -131,6 +179,120 @@
         "version_string": "1.0.0 Alpha",
         "hash": "0ab984d91ab0a037bdf692bf0e73c349"
     },
+    "wuak_last_link_check.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "202828cf4c80855adce8706318c7184d"
+    },
+    "wuak_store_address.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "af9cbba00fbb4f354bab26d24fa44183"
+    },
+    "wuak_store_code_snippet_description.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "bd90b07935ea34505f3cffb798f1f98d"
+    },
+    "wuak_store_configuration.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "0e26dff8cd3eface0f8fe12727a80b09"
+    },
+    "wuak_store_description.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "1c12fb7ea00426d97fb793364288d4c2"
+    },
+    "wuak_store_disabled.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "778ef6e041cf60d07f556969728faf8e"
+    },
+    "wuak_store_disabled_explain.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "e3f695a12ed4e5785a6858aa87fa7eff"
+    },
+    "wuak_store_enabled_explain.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "21207a50de241436f668ff9df7999087"
+    },
+    "wuak_store_error.connection.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "54840d33d843b9ce7bd6a9dddd2e2293"
+    },
+    "wuak_store_error.status_code.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "181f5007192c30ab7fdadecb116095bc"
+    },
+    "wuak_store_status.error.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "902b0d55fddef6f8d651fe1035b7d4bd"
+    },
+    "wuak_store_status.missing_link.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "cb183e59d3667458d73d665a960b680f"
+    },
+    "wuak_store_status.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "f7c67d5de868982995ea1606de8595e6"
+    },
+    "wuak_store_status.valid.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "3ac705f2acd51a4613f9188c05c91d0d"
+    },
+    "wuak_store_status.validating.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "c423b2af9f3f373c6576a8512645da9b"
+    },
+    "wuak_store_status_explain.missing_link.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "f96c5c1fad4a3dcda36ae12ea5c5acd9"
+    },
+    "wuak_store_status_explain.valid.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "d0dede9dc5a86a8c2315ea4419ac5b9c"
+    },
+    "wuak_store_status_explain.validating.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "76b688ce071b4aa1d2393b013a372505"
+    },
+    "wuak_user_store_list.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "1f4f073b1fab22b7ddcd29910138d35a"
+    },
     "wuak_x_day.txt": {
         "global_cache": false,
         "version_id": 1000010,
@@ -148,5 +310,11 @@
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "67aa1a08c672abc880aa1d51552a61a5"
+    },
+    "wuak_your_store_status_has_changed_to_x.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "cc80545d591b714e62da16513a1a46e8"
     }
 }
