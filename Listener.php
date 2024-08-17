@@ -43,7 +43,7 @@ class Listener
         /** @var \West\UserApiKey\XF\Entity\ApiKey $apiKey */
         $apiKey = $apiRepo->findApiKeyByKey($apiKeyValue, ['UserApiKey', 'UserApiKey.User', 'UserApiKey.User.UserStore']);
 
-        if (!$apiKey->isWuakUserApiKey())
+        if (!$apiKey || !$apiKey->isWuakUserApiKey())
         {
             return;
         }
