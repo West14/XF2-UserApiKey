@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\Admin\\Controller\\Log",
+    "to_class": "West\\UserApiKey\\XF\\Admin\\Controller\\Log",
+    "execute_order": 100600,
+    "active": true
+}

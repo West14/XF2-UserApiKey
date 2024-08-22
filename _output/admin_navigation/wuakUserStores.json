@@ -1,6 +1,6 @@
 {
     "parent_navigation_id": "userCustomization",
-    "display_order": 100600,
+    "display_order": 400,
     "link": "wuak-stores/",
     "icon": "",
     "admin_permission_id": "wuakManage",

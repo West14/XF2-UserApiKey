@@ -27,9 +27,20 @@ trait StoreCheckTrait
                 $store->error_retry_count = 3; // TODO: option?
             }
         }
+        $statusChanged = $store->isChanged('status');
 
         $store->error_code = $errorCode;
         $store->checked_at = \XF::$time;
-        $store->save();
+        $saved = $store->save();
+
+        if ($statusChanged && $saved)
+        {
+            $this->getStoreRepo()->logStatusChange($store, $store->status, $errorCode, false);
+        }
+    }
+
+    protected function getStoreRepo(): \West\UserApiKey\Repository\UserStore
+    {
+        return \XF::repository('West\UserApiKey:UserStore');
     }
 }

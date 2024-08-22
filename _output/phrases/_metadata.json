@@ -1,4 +1,10 @@
 {
+    "admin_navigation.wuakStoreCheckLog.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "ee0c109714e513d56023389678a9b520"
+    },
     "admin_navigation.wuakUserStores.txt": {
         "global_cache": false,
         "version_id": 1000010,
@@ -173,6 +179,12 @@
         "version_string": "1.0.0 Alpha",
         "hash": "5b6cf869265c13af8566f192b4ab3d2a"
     },
+    "wuak_go_to_store.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "263103c0aceb2492b9d0cf450001bc93"
+    },
     "wuak_important.txt": {
         "global_cache": false,
         "version_id": 1000010,
@@ -190,6 +202,12 @@
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "af9cbba00fbb4f354bab26d24fa44183"
+    },
+    "wuak_store_check_log.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "ee0c109714e513d56023389678a9b520"
     },
     "wuak_store_code_snippet_description.txt": {
         "global_cache": false,

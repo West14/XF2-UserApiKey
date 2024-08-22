@@ -2,6 +2,7 @@
 
 namespace West\UserApiKey\Service\Store;
 
+use voku\helper\HtmlDomParser;
 use West\UserApiKey\Entity\UserStore;
 use XF\Service\AbstractService;
 
@@ -51,14 +52,14 @@ class Checker extends AbstractService
         $checkUrl = $options->wuakCheckUrl ?: $options->boardUrl;
         $linkFound = false;
 
-        $dom = new \DOMDocument();
+        $dom = HtmlDomParser::str_get_html($html);
         $dom->loadHTML($html);
 
         $linkList = $dom->getElementsByTagName('a');
         foreach ($linkList as $link)
         {
-            $href = $link->attributes->getNamedItem('href');
-            if ($href && $href->value == $checkUrl)
+            $href = $link->getAttribute('href');
+            if ($href && $href == $checkUrl)
             {
                 $linkFound = true;
                 break;

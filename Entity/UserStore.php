@@ -100,7 +100,7 @@ class UserStore extends Entity
         $structure->columns = [
             'user_id' => ['type' => self::UINT, 'required' => true],
             'store_url' => ['type' => self::STR, 'required' => true, 'maxLength' => 128],
-            'status' => ['type' => self::STR, 'required' => true, 'default' => 'validating',
+            'status' => ['type' => self::STR, 'default' => 'validating',
                 'allowedValues' => ['valid', 'missing_link', 'validating', 'error']
             ],
             'error_code' => ['type' => self::STR, 'maxLength' => 64, 'nullable' => true, 'default' => null],

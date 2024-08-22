@@ -4,6 +4,11 @@
 // ################## THIS IS A GENERATED FILE ##################
 // DO NOT EDIT DIRECTLY. EDIT THE CLASS EXTENSIONS IN THE CONTROL PANEL.
 
+namespace West\UserApiKey\XF\Admin\Controller
+{
+	class XFCP_Log extends \XF\Admin\Controller\Log {}
+}
+
 namespace West\UserApiKey\XF\Entity
 {
 	class XFCP_ApiKey extends \XF\Entity\ApiKey {}

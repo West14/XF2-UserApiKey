@@ -1,0 +1,37 @@
+<xf:title>{{ phrase('wuak_store_check_log') }}</xf:title>
+
+
+<xf:if is="$logs is not empty">
+    <div class="block">
+        <div class="block-container">
+            <div class="block-body">
+                <xf:datalist>
+                    <xf:datarow rowtype="header">
+                        <xf:cell>{{ phrase('user_name') }}</xf:cell>
+                        <xf:cell>{{ phrase('wuak_store_status') }}</xf:cell>
+                        <xf:cell>{{ phrase('check_date') }}</xf:cell>
+                        <xf:cell>&nbsp;</xf:cell>
+                    </xf:datarow>
+                    <xf:foreach loop="$logs" value="$log">
+                        <xf:datarow label="{{ username_link($log.User) }}" hint="{$log.store_url}">
+                            <xf:cell>
+                                <xf:if is="$log.status == 'error'">
+                                    <span data-xf-init="tooltip" title="{$log.getErrorPhrase()}">
+                                        <xf:fa icon="fas fa-exclamation-circle" />
+                                        {$log.getStatusPhrase()}
+                                    </span>
+                                <xf:else />
+                                    {$log.getStatusPhrase()}
+                                </xf:if>
+                            </xf:cell>
+                            <xf:cell><xf:date time="$log.log_date" /></xf:cell>
+                            <xf:action href="{$log.store_url}" target="_blank">{{ phrase('wuak_go_to_store') }}</xf:action>
+                        </xf:datarow>
+                    </xf:foreach>
+                </xf:datalist>
+            </div>
+        </div>
+    </div>
+<xf:else />
+    <div class="blockMessage">{{ phrase('there_is_nothing_to_display') }}</div>
+</xf:if>
