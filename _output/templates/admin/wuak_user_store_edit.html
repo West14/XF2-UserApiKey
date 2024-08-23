@@ -17,6 +17,12 @@
                            placeholder="{$xf.options.boardUrl}"
             />
 
+            <xf:textboxrow name="webhook_url"
+                           value="{$store.webhook_url}"
+                           label="{{ phrase('wuak_webhook_url') }}"
+                           placeholder="{$xf.options.boardUrl}"
+            />
+
             <xf:checkboxrow>
                 <xf:option name="active" value="1" selected="$store.active"
                            hint="{{ phrase('wuak_store_enabled_explain') }}">

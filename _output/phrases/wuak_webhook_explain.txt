@@ -1,0 +1,1 @@
+We will send an HTTP request to this endpoint when the prefixes of any of your product threads are changed. We expect you to return a <code>200 OK</code> status code. If there is any error, we will resend the request after 10, 30, and 60 minutes.

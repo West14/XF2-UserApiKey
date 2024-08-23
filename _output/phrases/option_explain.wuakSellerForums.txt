@@ -1,0 +1,1 @@
+This option allows you to select the forums where the store threads are located. We will send a webhook to the thread owners store when the prefix of any of their threads is changed.

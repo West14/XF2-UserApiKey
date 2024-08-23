@@ -30,6 +30,8 @@ class Setup extends AbstractSetup
         {
             $table->addColumn('user_id', 'int');
             $table->addColumn('store_url', 'varchar', 128);
+            $table->addColumn('webhook_url', 'varchar', 512)->nullable();
+            $table->addColumn('webhook_secret', 'varchar', 64)->nullable();
             $table->addColumn('status', 'enum')->values(['valid', 'missing_link', 'validating', 'error']);
             $table->addColumn('error_code', 'varchar', 64)->nullable();
             $table->addColumn('error_retry_count', 'int')->setDefault(3);
@@ -59,6 +61,16 @@ class Setup extends AbstractSetup
             $table->addColumn('status', 'enum')->values(['valid', 'missing_link', 'validating', 'error']);
             $table->addColumn('error_code', 'varchar', 64)->nullable();
             $table->addColumn('log_date', 'int')->setDefault(0);
+        });
+    }
+
+    public function upgrade1000012Step1()
+    {
+        $this->alterTable('xf_wuak_user_store', function (XF\Db\Schema\Alter $table)
+        {
+            $table->addColumn('webhook_url', 'varchar', 512)->nullable();
+            $table->addColumn('webhook_secret', 'varchar', 64)->nullable();
+
         });
     }
 

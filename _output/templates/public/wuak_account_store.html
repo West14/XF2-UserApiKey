@@ -43,6 +43,25 @@
                            value="{$store.store_url}"
                            label="{{ phrase('wuak_store_address') }}"
                            placeholder="{$xf.options.boardUrl}"
+                           maxlength="{{ max_length($store, 'store_url') }}"
+            />
+
+            <xf:textboxrow name="webhook_url"
+                           value="{$store.webhook_url}"
+                           label="{{ phrase('wuak_webhook_url') }}"
+                           placeholder="https://your-store.com/api/webhook"
+                           hint="{{ phrase('optional') }}"
+                           explain="{{ phrase('wuak_webhook_explain') }}"
+                           maxlength="{{ max_length($store, 'webhook_url') }}"
+            />
+
+            <xf:passwordboxrow name="webhook_secret"
+                               value="{$store.webhook_secret}"
+                               label="{{ phrase('wuak_webhook_secret') }}"
+                               placeholder="topsecret"
+                               hint="{{ phrase('optional') }}"
+                               explain="{{ phrase('wuak_webhook_secret_explain') }}"
+                               maxlength="{{ max_length($store, 'webhook_secret') }}"
             />
         </div>
         <xf:submitrow icon="save" />

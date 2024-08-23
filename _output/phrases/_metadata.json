@@ -71,6 +71,12 @@
         "version_string": "1.0.0 Alpha",
         "hash": "ca3b52ca89cdf525fddc8f95958506f5"
     },
+    "option.wuakSellerForums.txt": {
+        "global_cache": false,
+        "version_id": 1000012,
+        "version_string": "1.0.0 Alpha 2",
+        "hash": "0088dd3951ad50cb258a4ebcb1f5aea4"
+    },
     "option_explain.wuakAllowedScopes.txt": {
         "global_cache": false,
         "version_id": 1000010,
@@ -100,6 +106,12 @@
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "0c40f61caf1304466f1d33b1f56359ef"
+    },
+    "option_explain.wuakSellerForums.txt": {
+        "global_cache": false,
+        "version_id": 1000012,
+        "version_string": "1.0.0 Alpha 2",
+        "hash": "648b3cfe4f65b7491c615649fe3ccfab"
     },
     "option_group.wUserApiKey.txt": {
         "global_cache": false,
@@ -310,6 +322,30 @@
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "1f4f073b1fab22b7ddcd29910138d35a"
+    },
+    "wuak_webhook_explain.txt": {
+        "global_cache": false,
+        "version_id": 1000012,
+        "version_string": "1.0.0 Alpha 2",
+        "hash": "41bf266010ac26c7eeef9223cde00863"
+    },
+    "wuak_webhook_secret.txt": {
+        "global_cache": false,
+        "version_id": 1000012,
+        "version_string": "1.0.0 Alpha 2",
+        "hash": "fa538cc4be3ae6dc7deb0eebe354db1e"
+    },
+    "wuak_webhook_secret_explain.txt": {
+        "global_cache": false,
+        "version_id": 1000012,
+        "version_string": "1.0.0 Alpha 2",
+        "hash": "3ec6b7d570149dd72a5dbcfec29b3af6"
+    },
+    "wuak_webhook_url.txt": {
+        "global_cache": false,
+        "version_id": 1000012,
+        "version_string": "1.0.0 Alpha 2",
+        "hash": "0b8764d3dc1a8f0ba45f7ab682e65766"
     },
     "wuak_x_day.txt": {
         "global_cache": false,

@@ -26,4 +26,19 @@ class UserStore extends Repository
 
         return $logEntry;
     }
+
+    public function getStoreByContent(string $contentType, $contentId)
+    {
+        try
+        {
+            $content = \XF::app()->findByContentType($contentType, $contentId, 'User');
+        }
+        catch (\LogicException $e) // in case if the User relation doesn't exist
+        {
+            \XF::logException($e);
+            return null;
+        }
+
+        return $content->User ? $content->User->UserStore : null;
+    }
 }

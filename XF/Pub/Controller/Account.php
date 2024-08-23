@@ -51,7 +51,13 @@ class Account extends XFCP_Account
 
         if ($this->isPost())
         {
-            $store->store_url = $this->filter('store_url', 'str');
+            $input = $this->filter([
+                'store_url' => 'str',
+                'webhook_url' => 'str',
+                'webhook_secret' => 'str',
+            ]);
+
+            $store->bulkSet($input);
             $store->save();
 
             return $this->redirect($this->buildLink('account/api-key'));

@@ -15,9 +15,9 @@
         "hash": "cbf23e2a86b1f99471456dc671f4d9b4"
     },
     "admin/wuak_user_store_edit.html": {
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "9423ad9ef280cae28f7124d2006910c0"
+        "version_id": 1000012,
+        "version_string": "1.0.0 Alpha 2",
+        "hash": "ea4fb0a9b883d28820be755f57dc2073"
     },
     "admin/wuak_user_store_index.html": {
         "version_id": 1000010,
@@ -50,9 +50,9 @@
         "hash": "3021754155317a2eddfa119a7a991d0c"
     },
     "public/wuak_account_store.html": {
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "836a40e447c484285bde51e9a1b5b8bf"
+        "version_id": 1000012,
+        "version_string": "1.0.0 Alpha 2",
+        "hash": "3d3379973d552bb767f2818f2c203269"
     },
     "public/wuak_account_store.less": {
         "version_id": 1000010,

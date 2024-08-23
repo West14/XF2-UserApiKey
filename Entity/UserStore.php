@@ -9,6 +9,8 @@ use XF\Mvc\Entity\Structure;
  * COLUMNS
  * @property int $user_id
  * @property string $store_url
+ * @property string|null $webhook_url
+ * @property string|null $webhook_secret
  * @property string $status
  * @property string|null $error_code
  * @property int $error_retry_count
@@ -99,11 +101,13 @@ class UserStore extends Entity
         $structure->primaryKey = 'user_id';
         $structure->columns = [
             'user_id' => ['type' => self::UINT, 'required' => true],
-            'store_url' => ['type' => self::STR, 'required' => true, 'maxLength' => 128],
+            'store_url' => ['type' => self::STR, 'required' => true, 'maxLength' => 128, 'match' => 'url'],
+            'webhook_url' => ['type' => self::STR, 'maxLength' => 512, 'nullable' => true, 'match' => 'url_empty'],
+            'webhook_secret' => ['type' => self::STR, 'maxLength' => 64, 'nullable' => true],
             'status' => ['type' => self::STR, 'default' => 'validating',
                 'allowedValues' => ['valid', 'missing_link', 'validating', 'error']
             ],
-            'error_code' => ['type' => self::STR, 'maxLength' => 64, 'nullable' => true, 'default' => null],
+            'error_code' => ['type' => self::STR, 'maxLength' => 64, 'nullable' => true],
             'error_retry_count' => ['type' => self::UINT, 'default' => 3],
             'active' => ['type' => self::BOOL, 'default' => true],
             'checked_at' => ['type' => self::UINT, 'default' => 0]

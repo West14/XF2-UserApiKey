@@ -63,6 +63,7 @@ class UserStore extends AbstractController
     {
         $input = $this->filter([
             'store_url' => 'str',
+            'webhook_url' => 'str',
             'active' => 'bool'
         ]);
 

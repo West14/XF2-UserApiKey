@@ -12,6 +12,7 @@ namespace West\UserApiKey\XF\Admin\Controller
 namespace West\UserApiKey\XF\Entity
 {
 	class XFCP_ApiKey extends \XF\Entity\ApiKey {}
+	class XFCP_Thread extends \XF\Entity\Thread {}
 	class XFCP_User extends \XF\Entity\User {}
 }
 

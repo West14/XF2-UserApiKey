@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\Entity\\Thread",
+    "to_class": "West\\UserApiKey\\XF\\Entity\\Thread",
+    "execute_order": 100600,
+    "active": true
+}
