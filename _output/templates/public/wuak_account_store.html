@@ -4,6 +4,12 @@
 
 <xf:css src="wuak_account_store.less" />
 
+<xf:pageaction if="{$store.isValid()}">
+    <xf:button href="{{ link('account/api-key') }}" fa="fa-key">
+        {{ phrase('wuak_api_key') }}
+    </xf:button>
+</xf:pageaction>
+
 <xf:form class="block" action="{{ link('account/store') }}">
     <div class="block-container">
         <div class="block-body">
