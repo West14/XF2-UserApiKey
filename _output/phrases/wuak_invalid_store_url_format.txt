@@ -1,0 +1,1 @@
+Invalid store URL format. The URL must only contain the domain (e.g., https://example.com) and should not include a path, query parameters, or fragments.

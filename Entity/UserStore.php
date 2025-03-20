@@ -94,6 +94,18 @@ class UserStore extends Entity
         }
     }
 
+    protected function verifyStoreUrl(&$value)
+    {
+        $parts = parse_url($value);
+        if (!empty($parts['query']) || !empty($parts['fragment']) || !empty($parts['path']))
+        {
+            $this->error(\XF::phrase('wuak_invalid_store_url_format'));
+            return false;
+        }
+
+        return true;
+    }
+
     public static function getStructure(Structure $structure)
     {
         $structure->table = 'xf_wuak_user_store';

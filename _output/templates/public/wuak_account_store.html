@@ -10,7 +10,7 @@
     </xf:button>
 </xf:pageaction>
 
-<xf:form class="block" action="{{ link('account/store') }}">
+<xf:form class="block" action="{{ link('account/store') }}" ajax="true">
     <div class="block-container">
         <div class="block-body">
             <xf:inforow>
@@ -54,6 +54,7 @@
                            label="{{ phrase('wuak_store_address') }}"
                            placeholder="{$xf.options.boardUrl}"
                            maxlength="{{ max_length($store, 'store_url') }}"
+                           explain="{{ phrase('wuak_store_url_explain') }}"
             />
 
             <xf:textboxrow name="webhook_url"
