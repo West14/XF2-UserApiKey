@@ -38,7 +38,7 @@
 
             <xf:if is="$store.exists()">
                 <xf:formrow label="{{ phrase('wuak_store_status') }}" explain="{$store.getStatusExplainPhrase()}"
-                            hint="{{ phrase('wuak_last_link_check:') }} {{ date_dynamic($store.checked_at) }}">
+                            hint="{{ phrase('wuak_last_link_check:') }} {{ $store.checked_at ? date_dynamic($store.checked_at) : phrase('never') }}">
                     <span class="u-ltr storeStatus-{$store.status}">{$store.getStatusPhrase()}</span>
                 </xf:formrow>
             </xf:if>
