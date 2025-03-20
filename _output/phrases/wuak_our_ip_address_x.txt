@@ -1,0 +1,1 @@
+To ensure seamless integration, please whitelist our crawler’s IP <code>{host}</code> so it can verify compliance without interference.

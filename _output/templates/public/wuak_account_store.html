@@ -9,6 +9,10 @@
         <div class="block-body">
             <xf:inforow>
                 {{ phrase('wuak_store_description') }}
+
+                <xf:if is="$proxyHost">
+                    {{ phrase('wuak_our_ip_address_x', { 'host': $proxyHost }) }}
+                </xf:if>
             </xf:inforow>
 
             <xf:inforow>

@@ -209,6 +209,12 @@
         "version_string": "1.0.0 Alpha",
         "hash": "202828cf4c80855adce8706318c7184d"
     },
+    "wuak_our_ip_address_x.txt": {
+        "global_cache": false,
+        "version_id": 1000013,
+        "version_string": "1.0.0 Alpha 3",
+        "hash": "58c3b94a95f050db1a960d6b1687b31b"
+    },
     "wuak_store_address.txt": {
         "global_cache": false,
         "version_id": 1000010,

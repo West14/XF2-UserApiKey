@@ -65,12 +65,17 @@ class Account extends XFCP_Account
         else
         {
             $exampleData = $this->getStoreLinkExampleData();
+            $proxyHost = parse_url(
+                \XF::app()->config()['http']['proxy'] ?? '',
+                PHP_URL_HOST
+            );
 
             $view = $this->view('West\UserApiKey:Account\Store', 'wuak_account_store', [
                 'user' => $user,
                 'store' => $store,
                 'snippet' => $exampleData['snippet'],
-                'checkUrl' => $exampleData['checkUrl']
+                'checkUrl' => $exampleData['checkUrl'],
+                'proxyHost' => $proxyHost,
             ]);
 
             return $this->addAccountWrapperParams($view, 'wuak-api-key');
