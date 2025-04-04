@@ -13,7 +13,7 @@ trait StoreCheckTrait
 
         /** @var Checker $checker */
         $checker = $this->app->service('West\UserApiKey:Store\Checker', $store);
-        $checkResult = $checker->check($errorCode);
+        $checkResult = $checker->check($errorCode, $html);
 
         if ($checkResult == 'error' && $store->status == 'valid' && $store->error_retry_count)
         {
@@ -35,7 +35,7 @@ trait StoreCheckTrait
 
         if ($statusChanged && $saved)
         {
-            $this->getStoreRepo()->logStatusChange($store, $store->status, $errorCode, false);
+            $this->getStoreRepo()->logStatusChange($store, $store->status, $errorCode, false, $html);
         }
     }
 

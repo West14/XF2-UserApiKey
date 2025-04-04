@@ -40,7 +40,7 @@ class Checker extends AbstractService
         return $response->getBody()->getContents();
     }
 
-    public function check(string &$errorCode = null): string
+    public function check(string &$errorCode = null, string &$html = null): string
     {
         $html = $this->getPageHtml($errorCode);
         if (!$html)

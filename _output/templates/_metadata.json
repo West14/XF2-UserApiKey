@@ -10,9 +10,14 @@
         "hash": "494c9f3f31d47333aa18de362b716e27"
     },
     "admin/wuak_log_store_check.html": {
-        "version_id": 1000011,
-        "version_string": "1.0.0 Alpha 1",
-        "hash": "cbf23e2a86b1f99471456dc671f4d9b4"
+        "version_id": 1000014,
+        "version_string": "1.0.0 Alpha 4",
+        "hash": "facc1a11347b96041db07367ad6ad99b"
+    },
+    "admin/wuak_log_store_check_html.html": {
+        "version_id": 1000014,
+        "version_string": "1.0.0 Alpha 4",
+        "hash": "b0511e4c792f980f0403803440388ad4"
     },
     "admin/wuak_user_store_edit.html": {
         "version_id": 1000012,

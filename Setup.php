@@ -46,6 +46,7 @@ class Setup extends AbstractSetup
             $table->addColumn('user_id', 'int');
             $table->addColumn('store_url', 'varchar', 128);
             $table->addColumn('status', 'enum')->values(['valid', 'missing_link', 'validating', 'error']);
+            $table->addColumn('html', 'text')->nullable();
             $table->addColumn('error_code', 'varchar', 64)->nullable();
             $table->addColumn('log_date', 'int')->setDefault(0);
         });
@@ -71,6 +72,14 @@ class Setup extends AbstractSetup
             $table->addColumn('webhook_url', 'varchar', 512)->nullable();
             $table->addColumn('webhook_secret', 'varchar', 64)->nullable();
 
+        });
+    }
+
+    public function upgrade1000014Step1()
+    {
+        $this->alterTable('xf_wuak_store_check_log', function (XF\Db\Schema\Alter $table)
+        {
+            $table->addColumn('html', 'text')->nullable();
         });
     }
 

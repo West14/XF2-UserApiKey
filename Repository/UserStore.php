@@ -14,7 +14,7 @@ class UserStore extends Repository
             ->with('User');
     }
 
-    public function logStatusChange(UserStoreEntity $store, string $newStatus, string $errorCode = null, bool $newTransaction = true)
+    public function logStatusChange(UserStoreEntity $store, string $newStatus, string $errorCode = null, bool $newTransaction = true, ?string $html = null)
     {
         /** @var StoreCheckLog $logEntry */
         $logEntry = $this->em->create('West\UserApiKey:StoreCheckLog');
@@ -22,6 +22,7 @@ class UserStore extends Repository
         $logEntry->store_url = $store->store_url;
         $logEntry->status = $newStatus;
         $logEntry->error_code = $errorCode;
+        $logEntry->html = $html;
         $logEntry->save(true, $newTransaction);
 
         return $logEntry;
