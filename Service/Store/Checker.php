@@ -58,7 +58,8 @@ class Checker extends AbstractService
         $linkList = $dom->getElementsByTagName('a');
         foreach ($linkList as $link)
         {
-            $href = $link->getAttribute('href');
+            $rawHref = $link->getAttribute('href');
+            $href = rtrim(trim($rawHref), '/');
             if ($href && $href == $checkUrl)
             {
                 $linkFound = true;
