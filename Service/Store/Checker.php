@@ -25,7 +25,7 @@ class Checker extends AbstractService
 
         if ($error)
         {
-            \XF::logError($error);
+            \XF::logError("[Store: {$this->store->user_id}] " . $error);
 
             $errorCode = 'connection';
             return null;
