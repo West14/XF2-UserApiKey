@@ -43,7 +43,7 @@ class StoreCheckLog extends Entity
             'status' => ['type' => self::STR, 'required' => true,
                 'allowedValues' => ['valid', 'missing_link', 'validating', 'error']
             ],
-            'html' => ['type' => self::STR, 'nullable' => true, 'default' => null],
+            'html' => ['type' => self::STR, 'nullable' => true, 'default' => null, 'maxLength' => 60000, 'forced' => true],
             'error_code' => ['type' => self::STR, 'maxLength' => 64, 'nullable' => true, 'default' => null],
             'log_date' => ['type' => self::UINT, 'default' => \XF::$time]
         ];

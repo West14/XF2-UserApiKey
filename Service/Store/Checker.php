@@ -20,12 +20,13 @@ class Checker extends AbstractService
 
     protected function getPageHtml(string &$errorCode = null): ?string
     {
+        $storeUrl = $this->store->store_url;
         $response = $this->app->http()->reader()
-            ->getUntrusted($this->store->store_url, [], null, [], $error);
+            ->getUntrusted($storeUrl, [], null, [], $error);
 
         if ($error)
         {
-            \XF::logError("[Store: {$this->store->user_id}] " . $error);
+            \XF::logError("[Store: $storeUrl] " . $error);
 
             $errorCode = 'connection';
             return null;
