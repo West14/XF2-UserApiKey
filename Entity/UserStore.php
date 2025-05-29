@@ -113,7 +113,7 @@ class UserStore extends Entity
         $structure->primaryKey = 'user_id';
         $structure->columns = [
             'user_id' => ['type' => self::UINT, 'required' => true],
-            'store_url' => ['type' => self::STR, 'required' => true, 'maxLength' => 128, 'match' => 'url'],
+            'store_url' => ['type' => self::STR, 'required' => true, 'maxLength' => 128, 'match' => 'url', 'unique' => true],
             'webhook_url' => ['type' => self::STR, 'maxLength' => 512, 'nullable' => true, 'match' => 'url_empty'],
             'webhook_secret' => ['type' => self::STR, 'maxLength' => 64, 'nullable' => true],
             'status' => ['type' => self::STR, 'default' => 'validating',

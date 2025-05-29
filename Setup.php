@@ -7,6 +7,7 @@ use XF\AddOn\AbstractSetup;
 use XF\AddOn\StepRunnerInstallTrait;
 use XF\AddOn\StepRunnerUninstallTrait;
 use XF\AddOn\StepRunnerUpgradeTrait;
+use XF\Db\Schema\Alter;
 use XF\Db\Schema\Create;
 
 class Setup extends AbstractSetup
@@ -67,7 +68,7 @@ class Setup extends AbstractSetup
 
     public function upgrade1000012Step1()
     {
-        $this->alterTable('xf_wuak_user_store', function (XF\Db\Schema\Alter $table)
+        $this->alterTable('xf_wuak_user_store', function (Alter $table)
         {
             $table->addColumn('webhook_url', 'varchar', 512)->nullable();
             $table->addColumn('webhook_secret', 'varchar', 64)->nullable();
@@ -77,9 +78,17 @@ class Setup extends AbstractSetup
 
     public function upgrade1000014Step1()
     {
-        $this->alterTable('xf_wuak_store_check_log', function (XF\Db\Schema\Alter $table)
+        $this->alterTable('xf_wuak_store_check_log', function (Alter $table)
         {
             $table->addColumn('html', 'text')->nullable();
+        });
+    }
+
+    public function upgrade1000015Step1()
+    {
+        $this->alterTable('xf_wuak_user_store', function (Alter $table)
+        {
+            $table->addUniqueKey('store_url');
         });
     }
 
