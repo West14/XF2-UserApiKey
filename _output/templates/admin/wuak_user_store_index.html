@@ -1,5 +1,9 @@
 <xf:title>{{ phrase('wuak_user_store_list') }}</xf:title>
 
+<xf:pageaction >
+	<xf:button href="{{ link('wuak-stores/seller-list') }}">{{ phrase('wuak_seller_list') }}</xf:button>
+</xf:pageaction>
+
 <xf:form class="block" action="{{ link('wuak-stores/toggle') }}" ajax="true">
     <div class="block-container">
         <div class="block-body">

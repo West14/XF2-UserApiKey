@@ -1,0 +1,25 @@
+<xf:title>{{ phrase('wuak_seller_list') }}</xf:title>
+
+<div class="block">
+    <div class="block-container">
+        <div class="block-body">
+            <xf:datalist>
+                <xf:datarow rowtype="header">
+                    <xf:cell>{{ phrase('user') }}</xf:cell>
+                    <xf:cell>{{ phrase('wuak_is_store_valid') }}</xf:cell>
+                    <xf:cell>&nbsp;</xf:cell>
+                </xf:datarow>
+                <xf:foreach loop="$sellerList" value="$seller">
+                    <xf:datarow href="{{ link('users/edit', $seller) }}"
+                    	hash="{$seller.user_id}"
+                    	label="{$seller.username}"
+                    	hint="{$seller.UserStore.store_url}"
+                    >
+                        <xf:cell>{{ $seller.UserStore.status == 'valid' ? phrase('yes') : phrase('no') }}</xf:cell>
+                        <xf:action href="{$seller.UserStore.store_url}">{{ phrase('wuak_go_to_store') }}</xf:action>
+                    </xf:datarow>
+                </xf:foreach>
+            </xf:datalist>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+This option is used to display seller accounts on the <a href="/admin.php?wuak-stores/seller-list">seller list</a> page.

@@ -59,6 +59,28 @@ class UserStore extends AbstractController
         return $this->redirect($this->buildLink('wuak-stores') . $this->buildLinkHash($store->user_id));
     }
 
+    public function actionSellerList()
+    {
+        $sellerUserGroups = \XF::options()->wuakSellerUserGroups;
+        $sellerFinder = \XF::finder('XF:User')
+            ->with('UserStore');
+
+        $expressions = array_map(function (int $userGroupId) use ($sellerFinder)
+        {
+            return $sellerFinder->expression(
+                sprintf('FIND_IN_SET(%s, %%s)', $sellerFinder->quote($userGroupId)),
+                ['secondary_group_ids']
+            );
+        }, $sellerUserGroups);
+
+        $sellerList = $sellerFinder->whereOr($expressions)
+            ->fetch();
+
+        return $this->view('West\UserApiKey:UserStore\SellerList', 'wuak_user_store_seller_list', [
+            'sellerList' => $sellerList
+        ]);
+    }
+
     protected function storeSaveProcess(\West\UserApiKey\Entity\UserStore $store)
     {
         $input = $this->filter([
