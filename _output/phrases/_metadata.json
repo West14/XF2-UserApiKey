@@ -233,6 +233,30 @@
         "version_string": "1.0.0 Alpha",
         "hash": "202828cf4c80855adce8706318c7184d"
     },
+    "wuak_main_sellers.txt": {
+        "global_cache": false,
+        "version_id": 1000016,
+        "version_string": "1.0.0 Alpha 6",
+        "hash": "a6035ae706847a8c1a09d36523ce87a1"
+    },
+    "wuak_move_to_main_list.txt": {
+        "global_cache": false,
+        "version_id": 1000016,
+        "version_string": "1.0.0 Alpha 6",
+        "hash": "f417506825a9eb74da0ba7cacea8c4b9"
+    },
+    "wuak_move_to_other_list.txt": {
+        "global_cache": false,
+        "version_id": 1000016,
+        "version_string": "1.0.0 Alpha 6",
+        "hash": "8a10afdd3ed5930cf61a4525cad57162"
+    },
+    "wuak_other_sellers.txt": {
+        "global_cache": false,
+        "version_id": 1000016,
+        "version_string": "1.0.0 Alpha 6",
+        "hash": "e295d1c70f318e9ba03be94cc6d7fcf9"
+    },
     "wuak_our_ip_address_x.txt": {
         "global_cache": false,
         "version_id": 1000013,

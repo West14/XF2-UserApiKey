@@ -2,24 +2,59 @@
 
 <div class="block">
     <div class="block-container">
-        <div class="block-body">
-            <xf:datalist>
-                <xf:datarow rowtype="header">
-                    <xf:cell>{{ phrase('user') }}</xf:cell>
-                    <xf:cell>{{ phrase('wuak_is_store_valid') }}</xf:cell>
-                    <xf:cell>&nbsp;</xf:cell>
-                </xf:datarow>
-                <xf:foreach loop="$sellerList" value="$seller">
-                    <xf:datarow href="{{ link('users/edit', $seller) }}"
-                    	hash="{$seller.user_id}"
-                    	label="{$seller.username}"
-                    	hint="{$seller.UserStore.store_url}"
-                    >
-                        <xf:cell>{{ $seller.UserStore.status == 'valid' ? phrase('yes') : phrase('no') }}</xf:cell>
-                        <xf:action href="{$seller.UserStore.store_url}">{{ phrase('wuak_go_to_store') }}</xf:action>
-                    </xf:datarow>
-                </xf:foreach>
-            </xf:datalist>
-        </div>
+        <h2 class="block-tabHeader tabs hScroller" data-xf-init="tabs h-scroller" data-state="replace" role="tablist">
+			<span class="hScroller-scroll">
+				<a class="tabs-tab is-active" role="tab" tabindex="0"
+                   id="main-sellers"
+                   aria-controls="main-sellers"
+                >{{ phrase('wuak_main_sellers') }}</a>
+                <a class="tabs-tab" role="tab" tabindex="0"
+                   id="other-sellers"
+                   aria-controls="other-sellers"
+                >{{ phrase('wuak_other_sellers') }}</a>
+            </span>
+        </h2>
+
+        <ul class="tabPanes">
+            <li class="is-active" role="tabpanel" aria-labelledby="main-sellers">
+                <div class="block-body">
+                    <xf:macro name="seller_list" arg-sellerList="{$mainSellerList}" />
+                </div>
+            </li>
+
+            <li role="tabpanel" aria-labelledby="other-sellers">
+                <div class="block-body">
+                    <xf:macro name="seller_list" arg-sellerList="{$otherSellerList}" arg-isOther="{{ true }}" />
+                </div>
+            </li>
+        </ul>
     </div>
 </div>
+
+<xf:macro name="seller_list" arg-sellerList="!" arg-isOther="{{ false }}">
+    <xf:datalist>
+        <xf:datarow rowtype="header">
+            <xf:cell>{{ phrase('user') }}</xf:cell>
+            <xf:cell>{{ phrase('wuak_is_store_valid') }}</xf:cell>
+            <xf:cell>&nbsp;</xf:cell>
+            <xf:cell>&nbsp;</xf:cell>
+        </xf:datarow>
+        <xf:foreach loop="$sellerList" value="$seller">
+            <xf:datarow href="{{ link('users/edit', $seller) }}"
+                        hash="{$seller.user_id}"
+                        label="{$seller.username}"
+                        hint="{$seller.UserStore.store_url}"
+            >
+                <xf:cell>{{ $seller.UserStore.status == 'valid' ? phrase('yes') : phrase('no') }}</xf:cell>
+                <xf:action>
+                    <xf:form action="{{ link('wuak-stores/seller-list-toggle', null, { 'user_id': $seller.user_id }) }}" ajax="true">
+                        <xf:button class="button button--link" type="submit">
+                            {{ $isOther ? phrase('wuak_move_to_main_list') : phrase('wuak_move_to_other_list') }}
+                        </xf:button>
+                    </xf:form>
+                </xf:action>
+                <xf:action href="{$seller.UserStore.store_url}">{{ phrase('wuak_go_to_store') }}</xf:action>
+            </xf:datarow>
+        </xf:foreach>
+    </xf:datalist>
+</xf:macro>

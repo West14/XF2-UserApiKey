@@ -76,9 +76,56 @@ class UserStore extends AbstractController
         $sellerList = $sellerFinder->whereOr($expressions)
             ->fetch();
 
+        $mainSellerList = [];
+        $otherSellerList = [];
+
+        $otherSellerIds = $this->getOtherSellerIds();
+
+        /** @var \XF\Entity\User $seller */
+        foreach ($sellerList as $seller)
+        {
+            if (in_array($seller->user_id, $otherSellerIds))
+            {
+                $otherSellerList[] = $seller;
+            }
+            else
+            {
+                $mainSellerList[] = $seller;
+            }
+        }
+
         return $this->view('West\UserApiKey:UserStore\SellerList', 'wuak_user_store_seller_list', [
-            'sellerList' => $sellerList
+            'mainSellerList' => $mainSellerList,
+            'otherSellerList' => $otherSellerList
         ]);
+    }
+
+    public function actionSellerListToggle()
+    {
+        $this->assertPostOnly();
+
+        $sellerId = $this->filter('user_id', 'uint');
+        if (!$sellerId)
+        {
+            return $this->notFound();
+        }
+
+        $otherSellerIds = $this->getOtherSellerIds();
+        if (in_array($sellerId, $otherSellerIds))
+        {
+            $otherSellerIds = array_filter($otherSellerIds, function ($userId) use ($sellerId)
+            {
+                return $userId != $sellerId;
+            });
+        }
+        else
+        {
+            $otherSellerIds[] = $sellerId;
+        }
+
+        $this->updateOtherSellerIds($otherSellerIds);
+
+        return $this->redirect($this->getDynamicRedirect());
     }
 
     protected function storeSaveProcess(\West\UserApiKey\Entity\UserStore $store)
@@ -105,5 +152,19 @@ class UserStore extends AbstractController
     protected function getUserStoreRepo()
     {
         return $this->repository('West\UserApiKey:UserStore');
+    }
+
+    protected function getOtherSellerIds(): array
+    {
+        return \XF::app()
+            ->simpleCache()
+            ->getValue('West/UserApiKey', 'otherSellerIds') ?? [];
+    }
+
+    protected function updateOtherSellerIds(array $otherSellerIds)
+    {
+        \XF::app()
+            ->simpleCache()
+            ->setValue('West/UserApiKey', 'otherSellerIds', $otherSellerIds);
     }
 }
