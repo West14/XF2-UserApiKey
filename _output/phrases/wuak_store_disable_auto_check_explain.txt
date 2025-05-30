@@ -1,0 +1,1 @@
+If selected, the automated checker will not visit the user's site. In this case, the check must be performed manually by an administrator.

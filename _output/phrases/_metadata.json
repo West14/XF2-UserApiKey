@@ -197,6 +197,12 @@
         "version_string": "1.0.0 Alpha",
         "hash": "0a2454cf86e3c9290ddcc717bfe8f968"
     },
+    "wuak_disable_auto_check.txt": {
+        "global_cache": false,
+        "version_id": 1000017,
+        "version_string": "1.0.0 Alpha 7",
+        "hash": "f92e657a16f1271f31a7a11c70efe2e4"
+    },
     "wuak_documentation.txt": {
         "global_cache": false,
         "version_id": 1000010,
@@ -298,6 +304,12 @@
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "1c12fb7ea00426d97fb793364288d4c2"
+    },
+    "wuak_store_disable_auto_check_explain.txt": {
+        "global_cache": false,
+        "version_id": 1000017,
+        "version_string": "1.0.0 Alpha 7",
+        "hash": "e1d4ea7a7a974c633309f3ab0e34ab52"
     },
     "wuak_store_disabled.txt": {
         "global_cache": false,

@@ -11,6 +11,7 @@ use XF\Mvc\Entity\Structure;
  * @property string $store_url
  * @property string|null $webhook_url
  * @property string|null $webhook_secret
+ * @property bool $disable_auto_check
  * @property string $status
  * @property string|null $error_code
  * @property int $error_retry_count
@@ -70,7 +71,7 @@ class UserStore extends Entity
 
     protected function _postSave()
     {
-        if ($this->status == 'validating')
+        if ($this->status == 'validating' && !$this->disable_auto_check)
         {
             \XF::app()->jobManager()->enqueueUnique(
                 'wuakStoreCheck-' . $this->user_id,
@@ -116,6 +117,7 @@ class UserStore extends Entity
             'store_url' => ['type' => self::STR, 'required' => true, 'maxLength' => 128, 'match' => 'url', 'unique' => true],
             'webhook_url' => ['type' => self::STR, 'maxLength' => 512, 'nullable' => true, 'match' => 'url_empty'],
             'webhook_secret' => ['type' => self::STR, 'maxLength' => 64, 'nullable' => true],
+            'disable_auto_check' => ['type' => self::BOOL, 'default' => false],
             'status' => ['type' => self::STR, 'default' => 'validating',
                 'allowedValues' => ['valid', 'missing_link', 'validating', 'error']
             ],

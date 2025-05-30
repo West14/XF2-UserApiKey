@@ -33,6 +33,7 @@ class Setup extends AbstractSetup
             $table->addColumn('store_url', 'varchar', 128);
             $table->addColumn('webhook_url', 'varchar', 512)->nullable();
             $table->addColumn('webhook_secret', 'varchar', 64)->nullable();
+            $table->addColumn('disable_auto_check', 'tinyint')->setDefault(0);
             $table->addColumn('status', 'enum')->values(['valid', 'missing_link', 'validating', 'error']);
             $table->addColumn('error_code', 'varchar', 64)->nullable();
             $table->addColumn('error_retry_count', 'int')->setDefault(3);
@@ -92,6 +93,17 @@ class Setup extends AbstractSetup
         });
     }
 
+    public function upgrade1000017Step1()
+    {
+        $this->alterTable('xf_wuak_user_store', function (Alter $table)
+        {
+            $table
+                ->addColumn('disable_auto_check', 'tinyint')
+                ->setDefault(0)
+                ->after('webhook_secret');
+        });
+    }
+
     public function uninstallStep1()
     {
         $keyIds = $this->app()->finder('West\UserApiKey:UserApiKey')
@@ -101,6 +113,7 @@ class Setup extends AbstractSetup
             return $x['api_key_id'];
         }, $keyIds);
 
+        // FIXME: this was not tested, and today I know that this will not work
         XF::db()->delete('xf_api_key', 'api_key_id IN (?)', implode(',', $keyIds));
     }
 

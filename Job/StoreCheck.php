@@ -23,7 +23,7 @@ class StoreCheck extends AbstractJob
         $userIds = $db->fetchAllColumn('
 			SELECT user_id
 			FROM xf_wuak_user_store
-			WHERE user_id > ?
+			WHERE user_id > ? AND disable_auto_check = 1
 			ORDER BY user_id
 			LIMIT 50
 		', [$this->data['position']]);
@@ -57,7 +57,7 @@ class StoreCheck extends AbstractJob
         if ($loopFinished)
         {
             if (!$db->fetchOne(
-                'SELECT 1 FROM xf_wuak_user_store WHERE user_id > ? LIMIT 1',
+                'SELECT 1 FROM xf_wuak_user_store WHERE user_id > ? AND disable_auto_check = 1 LIMIT 1',
                 [$this->data['position']]
             ))
             {

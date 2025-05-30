@@ -7,9 +7,14 @@
             	<xf:username user="$store.User" rich="true" />
             </xf:formrow>
 
-            <xf:formrow label="{{ phrase('wuak_store_status') }}" explain="{$store.getStatusExplainPhrase()}">
-                <span class="u-ltr">{$store.getStatusPhrase()}</span>
-            </xf:formrow>
+            <xf:selectrow label="{{ phrase('wuak_store_status') }}" name="status" value="{$store.status}"
+                          explain="{$store.getStatusExplainPhrase()}"
+            >
+                <xf:option value="valid">{{ phrase('wuak_store_status.valid') }}</xf:option>
+                <xf:option value="missing_link">{{ phrase('wuak_store_status.missing_link') }}</xf:option>
+                <xf:option value="validating">{{ phrase('wuak_store_status.validating') }}</xf:option>
+                <xf:option value="error">{{ phrase('wuak_store_status.error') }}</xf:option>
+            </xf:selectrow>
 
             <xf:textboxrow name="store_url"
                            value="{$store.store_url}"
@@ -24,6 +29,10 @@
             />
 
             <xf:checkboxrow>
+                <xf:option name="disable_auto_check" value="1" selected="$store.disable_auto_check"
+                           hint="{{ phrase('wuak_store_disable_auto_check_explain') }}">
+                    {{ phrase('wuak_disable_auto_check') }}
+                </xf:option>
                 <xf:option name="active" value="1" selected="$store.active"
                            hint="{{ phrase('wuak_store_enabled_explain') }}">
                     {{ phrase('enabled') }}
