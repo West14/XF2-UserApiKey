@@ -443,6 +443,66 @@
         "version_string": "1.0.0 Alpha",
         "hash": "154d469c8391fbb940d0378f3d474588"
     },
+    "wuak_x_days_many.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "154d469c8391fbb940d0378f3d474588"
+    },
+    "wuak_x_hour.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "e5e76935f883c844e293ec0788b9128f"
+    },
+    "wuak_x_hours_few.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "8ab46c5a4bfba365da05d2dca182057b"
+    },
+    "wuak_x_hours_many.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "8ab46c5a4bfba365da05d2dca182057b"
+    },
+    "wuak_x_minute.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "b6d38a7c12b219f43a1f0ce504c06903"
+    },
+    "wuak_x_minutes_few.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "c6bd3616eebea2845a867c339b8d0e47"
+    },
+    "wuak_x_minutes_many.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "c6bd3616eebea2845a867c339b8d0e47"
+    },
+    "wuak_x_second.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "f4204325b566fce06ff274302947baa7"
+    },
+    "wuak_x_seconds_few.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "ca9aa247cbcb12a7ac894160dd8457fb"
+    },
+    "wuak_x_seconds_many.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "ca9aa247cbcb12a7ac894160dd8457fb"
+    },
     "wuak_your_api_key_has_expired.txt": {
         "global_cache": false,
         "version_id": 1000010,
