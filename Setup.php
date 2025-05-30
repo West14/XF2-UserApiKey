@@ -106,15 +106,15 @@ class Setup extends AbstractSetup
 
     public function uninstallStep1()
     {
-        $keyIds = $this->app()->finder('West\UserApiKey:UserApiKey')
+        $keyIdList = $this->app()->finder('West\UserApiKey:UserApiKey')
             ->fetchColumns('api_key_id');
 
-        $keyIds = array_map(function ($x) {
+        $keyIdList = array_map(function ($x) {
             return $x['api_key_id'];
-        }, $keyIds);
+        }, $keyIdList);
 
-        // FIXME: this was not tested, and today I know that this will not work
-        XF::db()->delete('xf_api_key', 'api_key_id IN (?)', implode(',', $keyIds));
+        $keyIds = implode(',', $keyIdList);
+        XF::db()->delete('xf_api_key', "api_key_id IN ($keyIds)");
     }
 
     public function uninstallStep2()
