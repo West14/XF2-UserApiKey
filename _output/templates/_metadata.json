@@ -30,9 +30,9 @@
         "hash": "b607be9d7ebfc99d719db6b952231299"
     },
     "admin/wuak_user_store_seller_list.html": {
-        "version_id": 1000016,
-        "version_string": "1.0.0 Alpha 6",
-        "hash": "581e03f0f24d0e954143e4c894411200"
+        "version_id": 1000017,
+        "version_string": "1.0.0 Alpha 7",
+        "hash": "2d64fa0424834b2e4d507b30c9202f0b"
     },
     "public/alert_wuak_user_api_key_expiration.html": {
         "version_id": 1000010,

@@ -245,6 +245,12 @@
         "version_string": "1.0.0 Alpha 6",
         "hash": "a6035ae706847a8c1a09d36523ce87a1"
     },
+    "wuak_manually_verified.txt": {
+        "global_cache": false,
+        "version_id": 1000017,
+        "version_string": "1.0.0 Alpha 7",
+        "hash": "2bed4169a13ee1e3eab0296ac956f2d9"
+    },
     "wuak_move_to_main_list.txt": {
         "global_cache": false,
         "version_id": 1000016,

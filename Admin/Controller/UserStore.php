@@ -78,12 +78,18 @@ class UserStore extends AbstractController
 
         $mainSellerList = [];
         $otherSellerList = [];
+        $manuallyVerifiedList = [];
 
         $otherSellerIds = $this->getOtherSellerIds();
 
-        /** @var \XF\Entity\User $seller */
+        /** @var \West\UserApiKey\XF\Entity\User $seller */
         foreach ($sellerList as $seller)
         {
+            if ($seller->UserStore && $seller->UserStore->disable_auto_check)
+            {
+                $manuallyVerifiedList[] = $seller;
+            }
+
             if (in_array($seller->user_id, $otherSellerIds))
             {
                 $otherSellerList[] = $seller;
@@ -96,7 +102,8 @@ class UserStore extends AbstractController
 
         return $this->view('West\UserApiKey:UserStore\SellerList', 'wuak_user_store_seller_list', [
             'mainSellerList' => $mainSellerList,
-            'otherSellerList' => $otherSellerList
+            'otherSellerList' => $otherSellerList,
+            'manuallyVerifiedList' => $manuallyVerifiedList
         ]);
     }
 
