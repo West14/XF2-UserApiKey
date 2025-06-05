@@ -23,7 +23,7 @@ class StoreCheck extends AbstractJob
         $userIds = $db->fetchAllColumn('
 			SELECT user_id
 			FROM xf_wuak_user_store
-			WHERE user_id > ? AND disable_auto_check = 1
+			WHERE user_id > ? AND disable_auto_check = 0
 			ORDER BY user_id
 			LIMIT 50
 		', [$this->data['position']]);
