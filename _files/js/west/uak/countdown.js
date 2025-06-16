@@ -1,6 +1,6 @@
-window.West = window.West || {}
+window.West = window.West || {};
 
-!function ($, window, document) {
+((window, document) => {
     'use strict'
 
     West.Countdown = XF.Element.newHandler({
@@ -16,8 +16,6 @@ window.West = window.West || {}
             {
                 return
             }
-
-            this.target = this.$target[0]
 
             this.countdownDate = new Date(this.options.timestamp * 1000)
             this.targetDays = this.target.querySelector('.countdown-days')
@@ -83,4 +81,4 @@ window.West = window.West || {}
 
     XF.Element.register('wuak-countdown', 'West.Countdown')
 
-} (jQuery, window, document)
+}) (window, document)

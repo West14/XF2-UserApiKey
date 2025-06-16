@@ -11,7 +11,7 @@ use West\UserApiKey\Entity\UserApiKey;
  */
 class ApiKey extends XFCP_ApiKey
 {
-    public function hasScope($scope)
+    public function hasScope($scope): bool
     {
         if ($this->isWuakUserApiKey())
         {
