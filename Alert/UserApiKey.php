@@ -13,15 +13,16 @@ class UserApiKey extends AbstractHandler
 
     /**
      * @param $id
-     * @return \XF\Mvc\Entity\ArrayCollection|\XF\Mvc\Entity\Entity|null
+     * @return \XF\Mvc\Entity\AbstractCollection|\XF\Mvc\Entity\Entity|null
      *
      * we need to override this due to composite key usage
      */
     public function getContent($id)
     {
-        return \XF::finder('West\UserApiKey:UserApiKey')
+        $finder = \XF::finder('West\UserApiKey:UserApiKey')
             ->where('api_key_id', $id)
-            ->keyedBy('api_key_id')
-            ->fetchOne();
+            ->keyedBy('api_key_id');
+
+        return \is_array($id) ? $finder->fetch() : $finder->fetchOne();
     }
 }
