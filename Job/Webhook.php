@@ -46,6 +46,10 @@ class Webhook extends AbstractJob
         }
 
         $content = $this->app->findByContentType($contentType, $contentId);
+        if (!$content)
+        {
+            return $this->complete();
+        }
         $json = \XF::asVisitor($user, function () use ($content)
         {
              return $content->toApiResult()->render();
