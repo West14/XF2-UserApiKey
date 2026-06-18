@@ -63,12 +63,12 @@ class Webhook extends AbstractJob
         }
 
         $response = $reader->requestUntrusted('POST', $store->webhook_url, [], null, $options, $error);
-        if ($error || $response->getStatusCode() != 200)
+        if ($error || !$response || $response->getStatusCode() != 200)
         {
             \XF::logError(
-                'Store WebHook failed with  status code: ' . $response->getStatusCode() . '. Check next message for details.'
+                'Store WebHook failed with  status code: ' . $response?->getStatusCode() . '. Check next message for details.'
             );
-            \XF::logError($response->getBody()->getContents());
+            \XF::logError($response?->getBody()->getContents());
             $this->data['retry_count']--;
             if (!$this->data['retry_count'])
             {
